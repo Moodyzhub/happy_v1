@@ -155,7 +155,7 @@
                                     <span>ADDRESS : </span>${cv.address}
                                 </div>
                                 <div>
-                                    <span>$/1h : </span>${cv.cost}VNĐ
+                                    <span>Pay/1h : </span>${cv.cost}VNĐ
                                 </div>
                             </div>
                         </div>

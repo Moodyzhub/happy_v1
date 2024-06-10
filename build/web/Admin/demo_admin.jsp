@@ -376,59 +376,74 @@
                         </div>
                     </section>
             </section>
+            
             <section class="resume-section p-3 p-lg-5 d-flex d-column" id="cvmentor">
-                <div class="my-auto">
-                    <h1 class="mb-0">
-                        <span class="text-primary">CV Mentor</span>
-                    </h1>
-                    <div class="table-responsive">                       
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Full Name</th>
-                                    <th>Phone</th>
-                                    <th>DOB</th>
-                                    <th>Sex</th>
-                                    <th>Address</th>
-                                    <th>Profesion</th>
-                                    <th>Education</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach var="s" items="${cvList}" varStatus="loop">
-                                    <tr>
-                                        <td>${loop.index + 1}</td>
-                                        <td>${s.getIdMentor()}</td>
-                                        <td><img src="${s.getAvatar()}" width="100rem"  alt="alt"/></td>
-                                        <td><a style="text-decoration: none;" href="cvdetail?id=${s.getIdMentor()}">${s.getFullname()}</a></td>
-                                        <td>${s.getPhone()}</td>
-                                        <td>${s.getDob()}</td>
-                                        <td>${s.getSex()}</td>
-                                        <td>${s.getAddress()}</td>
-                                        <td>${s.getProfession()}</td>
-                                        <td>${s.getEducation()}</td>
+    <div class="my-auto">
+        <h1 class="mb-0">
+            <span class="text-primary">CV Mentor</span>
+        </h1>
+        <div class="table-responsive">                       
+            <table class="table table-bordered" >
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Full Name</th>
+                        <th>Phone</th>
+                        <th>DOB</th>
+                        <th>Sex</th>
+                        <th>Address</th>            
+                        <th>Profession</th>
+                        <th>Profession Introduction</th>
+                        <th>Achievement Description</th>
+                        <th>Framework</th>
+                        <th>Experience</th>
+                        <th>Education</th>
+                        <th>My Service</th>
+                        <th>STK</th>
+                        <th>Cost</th>
+                        <th>Skill</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="s" items="${cvList}" varStatus="loop">
+                        <tr>
+                            <td>${loop.index + 1}</td>
+                            <td>${s.getIdMentor()}</td>
+                            <td><img src="${s.getAvatar()}" width="100rem"  alt="alt"/></td>
+                            <td><a style="text-decoration: none;" href="cvdetail?id=${s.getIdMentor()}">${s.getFullname()}</a></td>
+                            <td>${s.getPhone()}</td>
+                            <td>${s.getDob()}</td>
+                            <td>${s.getSex()}</td>
+                            <td>${s.getAddress()}</td>
+                            <td>${s.getProfession()}</td>
+                            <td>${s.getPro_introduc()}</td>
+                            <td>${s.getArchivement_descition()}</td>
+                            <td>${s.getFramework()}</td>
+                            <td>${s.getExperience()}</td>
+                            <td>${s.getEducation()}</td>
+                            <td>${s.getMyservice()}</td>
+                            <td>${s.getStk()}</td>
+                            <td>${s.getCost()}</td>
+                            <td>${s.getSkill()}</td>
 
-                                        <td class="btn-container">
-                                            <a href="upcvmentor?idmentor=${s.getIdMentor()}" class="accept-btn">
-                                                Accept
-                                            </a>
-                                            <a href="deletecv?idmentor=${s.getIdMentor()}" class="delete-btn">
-                                                Delete
-                                            </a> 
-                                        </td>
-
-
-                                    </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>               
+                            <td class="btn-container">
+                                <a href="upcvmentor?idmentor=${s.getIdMentor()}" class="accept-btn">
+                                    Accept
+                                </a>
+                                <a href="deletecv?idmentor=${s.getIdMentor()}" class="delete-btn">
+                                    Delete
+                                </a> 
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>             
 
             <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="mentee">
                 <div class="my-auto">
