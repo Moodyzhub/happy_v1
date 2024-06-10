@@ -17,6 +17,7 @@ import java.util.List;
 import model.Account;
 import model.Have_SKill;
 import model.Mentor;
+import model.Rate;
 import model.info;
 
 /**
@@ -97,6 +98,9 @@ public class Profile_cvMentor extends HttpServlet {
                 // Retrieve account information of the mentor
                 Account account = mentorDao.getAccountByid(idMentor);
                 request.setAttribute("cx", account);
+                // Retrieve rates for the mentor
+    List<Rate> rates = mentorDao.getRatesByMentorId(idMentor);
+    request.setAttribute("rates", rates);
 
                 // Forward the request to the appropriate JSP page based on the action
                 if (action == null) { // If this is the action of a mentor viewing their own CV

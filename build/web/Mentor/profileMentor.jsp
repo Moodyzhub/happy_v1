@@ -230,20 +230,12 @@
                     <h3 class="title">FeedBack</h3>
                     <article class="resume-lines">
                         <section class="resume-line line-left">
-                           
-
+                            <c:forEach var="rate" items="${rates}">
+                                <div>IdMentee: ${rate.idMentee}</div>
+                                <div>Star: ${rate.star}</div>
+                                <div>Comment: ${rate.comment}</div>
+                            </c:forEach>
                         </section>
-                        <section class="resume-line line-left">
-                            
-                        </section>
-                    </article>
-                    <article class="resume-skills">
-                        
-                                </article>
-
-
-                            </section>
-                        </div>
                     </article>
                 </section>
                 

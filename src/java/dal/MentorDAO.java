@@ -5,6 +5,7 @@
 package dal;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +18,7 @@ import java.util.List;
 import model.Account;
 import model.Have_SKill;
 import model.Mentor;
+import model.Rate;
 import model.Request;
 import model.Skill;
 import model.SkillMentor;
@@ -417,7 +419,30 @@ public class MentorDAO extends DBContext {
             return 0;
         }
     }
-
+    public List<Rate> getRatesByMentorId(int idMentor) {
+        List<Rate> rates = new ArrayList<>();
+        String sql = "SELECT idRate, idRequest, idMentee, star, comment FROM rate WHERE idMentor = ?";
+    
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+    
+            pstmt.setInt(1, idMentor);
+            ResultSet rs = pstmt.executeQuery();
+    
+            while (rs.next()) {
+                Rate rate = new Rate();
+                rate.setIdRate(rs.getInt("idRate"));
+                rate.setIdRequest(rs.getInt("idRequest"));
+                rate.setIdMentee(rs.getInt("idMentee"));
+                rate.setStar(rs.getInt("star"));
+                rate.setComment(rs.getString("comment"));
+                rates.add(rate);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    
+        return rates;
+    }
     public int totalRequest(int idMentor) {
         int totalRequest = 0;
         try {
