@@ -105,7 +105,7 @@ public class Profile_cvMentor extends HttpServlet {
                 } else {
                     request.setAttribute("rates", rates);
                 }
-
+                
                 // Forward the request to the appropriate JSP page based on the action
                 if (action == null) { // If this is the action of a mentor viewing their own CV
                     request.getRequestDispatcher("Mentor/profileMentor.jsp").forward(request, response);

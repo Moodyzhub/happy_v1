@@ -235,16 +235,16 @@
                                     <div style="font-size: 20px; text-align: center; color: red;">${message}</div>
                                 </c:when>
                                 <c:otherwise>
-                                    <table style="table-layout: fixed; width: 100%;">
-                                        <tr>
-                                            <th>IdMentee</th>
-                                            <th>Star</th>
-                                            <th>Comment</th>
+                                    <table style="table-layout: fixed; width: 100%;" >
+                                        <tr style="padding: 20px; ">
+                                            <!-- <th style="padding: 10px;">IdMentee</th> -->
+                                            <th >Star</th>
+                                            <th >Comment</th>
                                         </tr>
                                         <c:forEach var="rate" items="${rates}">
-                                            <tr>
-                                                <td>${rate.idMentee}</td>
-                                                <td>${rate.star} <i class="fa fa-star" style="color: yellow;"></i></td>
+                                            <tr >
+                                                <!-- <td style="padding: 10px;">${rate.idMentee}</td> -->
+                                                <td style="padding: 10px;">${rate.star} <i class="fa fa-star" style="color: yellow;"></i></td>
                                                 <td>${rate.comment}</td>
                                             </tr>
                                         </c:forEach>
