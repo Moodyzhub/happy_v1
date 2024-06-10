@@ -169,9 +169,9 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#cvmentor">CV Mentor</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#news">News</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#mentor">Mentor</a>
                     </li>
@@ -190,9 +190,9 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#request">Requests</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div>
@@ -336,7 +336,7 @@
 </table>
 </div>
 </section>-->
-        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="news">
+        <!-- <section class="resume-section p-3 p-lg-5 d-flex d-column" id="news">
             <div class="my-auto">
                 <h1 class="mb-0">
                     <span class="text-primary">News</span>
@@ -381,7 +381,7 @@
                     </table>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="mentor">
             <div class="my-auto">
@@ -698,7 +698,7 @@
                     </div>
             </div>
         </section>
-        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="blog">
+        <!-- <section class="resume-section p-3 p-lg-5 d-flex d-column" id="blog">
             <div class="my-auto">
                 <h1 class="mb-0">
                     <span class="text-primary">Blog</span>
@@ -743,7 +743,7 @@
                     </table>
                 </div>
             </div>
-        </section>
+        </section> -->
         <script>
             function submitCombinedForm() {
                 document.getElementById('combinedFilterForm').submit();
