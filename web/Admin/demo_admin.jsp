@@ -256,7 +256,7 @@
                                             Accept
                                         </a>
                                         <a href="deletecv?idmentor=${s.getIdMentor()}" class="delete-btn">
-                                            Delete
+                                            Reject
                                         </a> 
                                     </td>
                                 </tr>
