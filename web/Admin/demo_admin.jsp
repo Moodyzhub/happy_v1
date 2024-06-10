@@ -402,7 +402,7 @@
                         <th>Education</th>
                         <th>My Service</th>
                         <th>STK</th>
-                        <th>Cost</th>
+                        <th>Pay/hour</th>
                         <th>Skill</th>
                         <th>Action</th>
                     </tr>

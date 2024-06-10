@@ -19,7 +19,7 @@
         <div class="container">
             <div class="screen">
                 <div class="screen__content">
-                    <h2 style="color: #0c63e4;margin-top: 40px;margin-left: 10px">Only for Admin</h2>
+                    <h2 style="color: #0c63e4;margin-top: 40px;margin-left: 10px">For Admin/Manager</h2>
                     <h1 style="color: red">${mess}</h1>
                     <form class="login" action="signinAdmin" method="post">
                         <div class="login__field">
