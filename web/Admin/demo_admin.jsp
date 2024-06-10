@@ -133,6 +133,17 @@
                 cursor: pointer;
                 margin-top: 5px; /* Add margin between buttons */
             }
+            /* display cvmento for fit */
+            .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table th {
+    white-space: nowrap;
+}
 
 
         </style>
@@ -194,7 +205,7 @@
                     <span class="text-primary">CV Mentor</span>
                 </h1>
                 <div class="table-responsive">                       
-                    <table class="table table-bordered" >
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>STT</th>
@@ -203,10 +214,10 @@
                                 <th>Full Name</th>
                                 <th>Phone</th>
                                 <th>DOB</th>
-                                <th>Sex</th>
-                                <th>Address</th>            
+                                <!-- <th>Sex</th> -->
+                                <!-- <th>Address</th>             -->
                                 <th>Profession</th>
-                                <th>Profession Introduction</th>
+                                <!-- <th>Profession Introduction</th> -->
                                 <th>Achievement Description</th>
                                 <th>Framework</th>
                                 <th>Experience</th>
@@ -227,10 +238,10 @@
                                     <td><a style="text-decoration: none;" href="cvdetail?id=${s.getIdMentor()}">${s.getFullname()}</a></td>
                                     <td>${s.getPhone()}</td>
                                     <td>${s.getDob()}</td>
-                                    <td>${s.getSex()}</td>
-                                    <td>${s.getAddress()}</td>
+                                    <!-- <td>${s.getSex()}</td> -->
+                                    <!-- <td>${s.getAddress()}</td> -->
                                     <td>${s.getProfession()}</td>
-                                    <td>${s.getPro_introduc()}</td>
+<!--                                    <td>${s.getPro_introduc()}</td>-->
                                     <td>${s.getArchivement_descition()}</td>
                                     <td>${s.getFramework()}</td>
                                     <td>${s.getExperience()}</td>
