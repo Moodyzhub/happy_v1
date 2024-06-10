@@ -81,6 +81,26 @@
                 font-weight: bold;
                 white-space: pre-line;
             }
+            .row {
+        display: flex;
+        justify-content: space-around;
+    }
+    .column {
+        width: 45%; /* Adjust as needed */
+    }
+    .left {
+        text-align: right;
+    }
+    .right {
+        text-align: left;
+    }
+    .about-aboutMe, .about-services, .resume-lines, .resume-skills {
+        margin-bottom: 20px; /* Adjust as needed */
+    }
+    .line-down {
+        margin-top: 10px; /* Adjust as needed */
+        margin-bottom: 10px; /* Adjust as needed */
+    }
         </style>
 
 
@@ -99,12 +119,8 @@
                     </a>
                     <a href="#resume" id='getResume'>
                         <span class="fas fa-file"></span>
-                        <span class="link">Resume</span>
-                    </a>
-                    <a href="#contact" id='getContact'>
-                        <span class="fas fa-at"></span>
-                        <span class="link">Contact</span>
-                    </a>
+                        <span class="link">Feedback</span>
+                    </a>                   
                     <c:if test="${update eq 'accept'}">
                         <a href="createcv?idMentor=${cx.getId()}">
                             <span class="fa-solid fa-pen-nib"></span>
@@ -125,9 +141,27 @@
                             <img src="${cv.getAvatar()}" alt="">
                         </div>
                         <h1 class="profile-name" id="nombre"> ${cv.fullname}</h1>
-                        <h2 class="profile-profession"> ${cv.profession}</h2>
-
-                    </div>
+                        <h2 class="profile-profession"> ${cv.profession}</h2> 
+                        <div class="row">
+                            <div class="column left">Sex :</div>
+                            <div class="column right">${cv.sex}</div>
+                        </div>
+                        <div class="row">
+                            <div class="column left">ADDRESS :</div>
+                            <div class="column right">${cv.address}</div>
+                        </div>
+                        <div class="row">
+                            <div class="column left">Pay/1h :</div>
+                            <div class="column right">${cv.cost}VNĐ</div>
+                        </div>
+                        <div class="row">
+                            <div class="column left">EMAIL :</div>
+                            <div class="column right">${cx.email}</div>
+                        </div>
+                        <div class="row">
+                            <div class="column left">PHONE :</div>
+                            <div class="column right">${cv.phone}</div>
+                        </div>
 
                     <c:if test="${action eq 'request'}">
                         <div class="gradient-button">
@@ -139,25 +173,7 @@
                     <article class="about-aboutMe">
                         <h3 class="title">About Me</h3>
                         <div class="line-left">
-                            <p>${cv.pro_introduc}</p>
-                            <div>
-                                <div>
-                                    <span>Date :  </span>${cv.dob}
-                                </div> 
-                                <div>
-                                    <span>AGE :  </span>${cv.age}
-                                </div>     
-                                <div>
-                                    <span>Sex : </span>${cv.sex}
-                                </div>
-
-                                <div>
-                                    <span>ADDRESS : </span>${cv.address}
-                                </div>
-                                <div>
-                                    <span>Pay/1h : </span>${cv.cost}VNĐ
-                                </div>
-                            </div>
+                            <p>${cv.pro_introduc}</p>                           
                         </div>
                     </article>
                     <article class="about-services">
@@ -177,27 +193,18 @@
                         </div>   
 
                     </article>
-
-                </section>
-                <section id="resume" class="resume">
-                    <h3 class="title">Resume</h3>
                     <article class="resume-lines">
                         <section class="resume-line line-left">
                             <h4 class="line-down"> <i class="fas fa-briefcase"></i> Experience</h4>
                             <article class="line-down">
-
-
                                 <p>${cv.experience}</p>
                             </article>
-
                         </section>
                         <section class="resume-line line-left">
                             <h4 class="line-down"> <i class="fas fa-university"></i> Education</h4>
                             <article class="line-down">
-
                                 <p>${cv.education}</p>
                             </article>
-
                         </section>
                     </article>
                     <article class="resume-skills">
@@ -206,18 +213,32 @@
                             <section class="line-left">
                                 <h4 class="line-down"> <i class="fas fa-tv"></i> Skills</h4>
                                 <c:forEach var="e" items="${cf}">
-
                                     <div>${e.getSkillname()}</div>
-
-
                                 </c:forEach>
-
-
                             </section>
                             <section class="line-left">
                                 <h4 class="line-down"><i class="fas fa-code"></i> FRAMEWORK</h4>
                                 <article class="line-down">
                                     <p>${cv.framework}</p>
+                                </article>
+                            </section>
+                        </div>
+                    </article>
+
+                </section>
+                <section id="resume" class="resume">
+                    <h3 class="title">FeedBack</h3>
+                    <article class="resume-lines">
+                        <section class="resume-line line-left">
+                           
+
+                        </section>
+                        <section class="resume-line line-left">
+                            
+                        </section>
+                    </article>
+                    <article class="resume-skills">
+                        
                                 </article>
 
 
@@ -225,71 +246,47 @@
                         </div>
                     </article>
                 </section>
-                <section id="contact" class="contact">
-                    <h3 class="title">Get in Touch</h3>
-                    <div class="contact-information line-left">
-                        <div>
-                            <span>ADDRESS : </span> ${cv.address}
-                        </div>
-                        <div>
-                            <span>EMAIL : </span> ${cx.email}
-                        </div>
-                        <div>
-                            <span>PHONE : </span>${cv.phone}
-                        </div>
-
-                    </div>
-                </section>
+                
             </main>
         </div>
     </body>
-    <script>
+    <script>// Menu links
         // Menu links
-        let getAbout = document.getElementById("getAbout");
-        let getResume = document.getElementById("getResume");
-        let getContact = document.getElementById("getContact");
+let getAbout = document.getElementById("getAbout");
+let getResume = document.getElementById("getResume");
 
-        // Sections
-        let about = document.getElementById("about");
-        let resume = document.getElementById("resume");
-        let contact = document.getElementById("contact");
+// Sections
+let about = document.getElementById("about");
+let resume = document.getElementById("resume");
 
-        function removeClass() {
-            // Links
-            getAbout.classList.remove('selected');
-            getResume.classList.remove('selected');
-            getContact.classList.remove('selected');
-            // Sections
-            about.classList.remove('view');
-            resume.classList.remove('view');
-            contact.classList.remove('view');
+function removeClass() {
+    // Links
+    getAbout.classList.remove('selected');
+    if (getResume) getResume.classList.remove('selected');
+    // Sections
+    about.classList.remove('view');
+    if (resume) resume.classList.remove('view');
+}
+
+getAbout.addEventListener('click', function (e) {
+    if (window.innerWidth > 1040) {
+        e.preventDefault();
+        removeClass();
+        about.classList.add('view');
+        getAbout.classList.add('selected');
+    }
+});
+
+if (getResume) {
+    getResume.addEventListener('click', function (e) {
+        if (window.innerWidth > 1040) {
+            e.preventDefault();
+            removeClass();
+            resume.classList.add('view');
+            getResume.classList.add('selected');
         }
-
-        getAbout.addEventListener('click', function (e) {
-            if (window.innerWidth > 1040) {
-                e.preventDefault();
-                removeClass();
-                about.classList.add('view');
-                getAbout.classList.add('selected');
-            }
-
-        });
-        getResume.addEventListener('click', function (e) {
-            if (window.innerWidth > 1040) {
-                e.preventDefault();
-                removeClass();
-                resume.classList.add('view');
-                getResume.classList.add('selected');
-            }
-        })
-        getContact.addEventListener('click', function (e) {
-            if (window.innerWidth > 1040) {
-                e.preventDefault();
-                removeClass();
-                contact.classList.add('view');
-                getContact.classList.add('selected');
-            }
-        })
+    });
+}
 
     </script>
 
