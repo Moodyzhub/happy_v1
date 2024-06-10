@@ -760,7 +760,20 @@
 
 
         </div>
+        <script>
+            // Lưu vị trí cuộn khi trang bắt đầu tải lại
+window.onbeforeunload = function() {
+    localStorage.setItem('scrollPosition', window.scrollY);
+};
 
+// Khi trang đã tải xong, cuộn đến vị trí đã lưu
+window.onload = function() {
+    if (localStorage.getItem('scrollPosition')) {
+        window.scrollTo(0, localStorage.getItem('scrollPosition'));
+        localStorage.removeItem('scrollPosition');
+    }
+};
+            </script>
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
