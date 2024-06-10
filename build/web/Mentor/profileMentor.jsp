@@ -119,7 +119,7 @@
                     </a>
                     <a href="#resume" id='getResume'>
                         <span class="fas fa-file"></span>
-                        <span class="link">Feedback</span>
+                        <span class="link">Rating</span>
                     </a>                   
                     <c:if test="${update eq 'accept'}">
                         <a href="createcv?idMentor=${cx.getId()}">
@@ -227,14 +227,30 @@
 
                 </section>
                 <section id="resume" class="resume">
-                    <h3 class="title">FeedBack</h3>
+                    <h3 class="title">Rating</h3>
                     <article class="resume-lines">
                         <section class="resume-line line-left">
-                            <c:forEach var="rate" items="${rates}">
-                                <div>IdMentee: ${rate.idMentee}</div>
-                                <div>Star: ${rate.star}</div>
-                                <div>Comment: ${rate.comment}</div>
-                            </c:forEach>
+                            <c:choose>
+                                <c:when test="${empty rates}">
+                                    <div style="font-size: 20px; text-align: center; color: red;">${message}</div>
+                                </c:when>
+                                <c:otherwise>
+                                    <table style="table-layout: fixed; width: 100%;">
+                                        <tr>
+                                            <th>IdMentee</th>
+                                            <th>Star</th>
+                                            <th>Comment</th>
+                                        </tr>
+                                        <c:forEach var="rate" items="${rates}">
+                                            <tr>
+                                                <td>${rate.idMentee}</td>
+                                                <td>${rate.star} <i class="fa fa-star" style="color: yellow;"></i></td>
+                                                <td>${rate.comment}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </table>
+                                </c:otherwise>
+                            </c:choose>
                         </section>
                     </article>
                 </section>

@@ -99,8 +99,12 @@ public class Profile_cvMentor extends HttpServlet {
                 Account account = mentorDao.getAccountByid(idMentor);
                 request.setAttribute("cx", account);
                 // Retrieve rates for the mentor
-    List<Rate> rates = mentorDao.getRatesByMentorId(idMentor);
-    request.setAttribute("rates", rates);
+                List<Rate> rates = mentorDao.getRatesByMentorId(idMentor);
+                if (rates == null || rates.isEmpty()) {
+                    request.setAttribute("message", "Hiện chưa có rating nào");
+                } else {
+                    request.setAttribute("rates", rates);
+                }
 
                 // Forward the request to the appropriate JSP page based on the action
                 if (action == null) { // If this is the action of a mentor viewing their own CV
