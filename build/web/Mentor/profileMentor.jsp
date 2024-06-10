@@ -111,8 +111,8 @@
                             <span class="link">Update</span>
                         </a>
                     </c:if>
-                    <a href="home.jsp">
-                        <span class="fa-thin fa-house"></span>
+                    <a href="home">
+                        <span class="fa fa-home"></span>
                         <span class="link">Home</span>
                     </a>
                 </nav>
