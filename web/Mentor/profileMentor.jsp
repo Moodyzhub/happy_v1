@@ -82,25 +82,25 @@
                 white-space: pre-line;
             }
             .row {
-        display: flex;
-        justify-content: space-around;
-    }
-    .column {
-        width: 45%; /* Adjust as needed */
-    }
-    .left {
-        text-align: right;
-    }
-    .right {
-        text-align: left;
-    }
-    .about-aboutMe, .about-services, .resume-lines, .resume-skills {
-        margin-bottom: 20px; /* Adjust as needed */
-    }
-    .line-down {
-        margin-top: 10px; /* Adjust as needed */
-        margin-bottom: 10px; /* Adjust as needed */
-    }
+                display: flex;
+                justify-content: space-around;
+            }
+            .column {
+                width: 45%; /* Adjust as needed */
+            }
+            .left {
+                text-align: right;
+            }
+            .right {
+                text-align: left;
+            }
+            .about-aboutMe, .about-services, .resume-lines, .resume-skills {
+                margin-bottom: 20px; /* Adjust as needed */
+            }
+            .line-down {
+                margin-top: 10px; /* Adjust as needed */
+                margin-bottom: 10px; /* Adjust as needed */
+            }
         </style>
 
 
@@ -119,7 +119,7 @@
                     </a>
                     <a href="#resume" id='getResume'>
                         <span class="fas fa-file"></span>
-                        <span class="link">Feedback</span>
+                        <span class="link">Rating</span>
                     </a>                   
                     <c:if test="${update eq 'accept'}">
                         <a href="createcv?idMentor=${cx.getId()}">
@@ -163,11 +163,11 @@
                             <div class="column right">${cv.phone}</div>
                         </div>
 
-                    <c:if test="${action eq 'request'}">
-                        <div class="gradient-button">
-                            <a  href="Request?action=create&idMentor=${cv.getIdMentor()}">Create Request</a>
-                        </div>
-                    </c:if>
+                        <c:if test="${action eq 'request'}">
+                            <div class="gradient-button">
+                                <a  href="Request?action=create&idMentor=${cv.getIdMentor()}">Create Request</a>
+                            </div>
+                        </c:if>
                 </section>
                 <section id="about" class="about view">
                     <article class="about-aboutMe">
@@ -227,67 +227,85 @@
 
                 </section>
                 <section id="resume" class="resume">
-                    <h3 class="title">FeedBack</h3>
+                    <h3 class="title">Rating</h3>
                     <article class="resume-lines">
                         <section class="resume-line line-left">
-                           
-
-                        </section>
-                        <section class="resume-line line-left">
                             
+                            <c:choose>
+                                <c:when test="${empty rates}">
+                                    <div style="font-size: 20px; text-align: center; color: red;">${message}</div>
+                                </c:when>
+                                <c:otherwise>
+                                    <table style="table-layout: fixed; width: 100%;" >
+                                        <tr style="padding: 20px; ">
+                                            
+                                            <th>Star</th>
+                                            <th>Comment</th>
+                                        </tr>
+                                        <c:forEach var="rate" items="${rates}">
+                                            <tr>
+                                                
+                                                 <td style="padding: 10px;">${rate.star} <i class="fa fa-star" style="color: yellow;"></i></td>
+                                                <td>${rate.comment}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </table>
+                                </c:otherwise>
+                            </c:choose>
                         </section>
-                    </article>
-                    <article class="resume-skills">
                         
-                                </article>
-
-
-                            </section>
-                        </div>
                     </article>
+                    
+
+
                 </section>
-                
-            </main>
         </div>
-    </body>
-    <script>// Menu links
-        // Menu links
-let getAbout = document.getElementById("getAbout");
-let getResume = document.getElementById("getResume");
+    </article>
+</section>
+
+</main>
+</div>
+</body>
+<script>// Menu links
+    // Menu links
+    let getAbout = document.getElementById("getAbout");
+    let getResume = document.getElementById("getResume");
 
 // Sections
-let about = document.getElementById("about");
-let resume = document.getElementById("resume");
+    let about = document.getElementById("about");
+    let resume = document.getElementById("resume");
 
-function removeClass() {
-    // Links
-    getAbout.classList.remove('selected');
-    if (getResume) getResume.classList.remove('selected');
-    // Sections
-    about.classList.remove('view');
-    if (resume) resume.classList.remove('view');
-}
-
-getAbout.addEventListener('click', function (e) {
-    if (window.innerWidth > 1040) {
-        e.preventDefault();
-        removeClass();
-        about.classList.add('view');
-        getAbout.classList.add('selected');
+    function removeClass() {
+// Links
+        getAbout.classList.remove('selected');
+        if (getResume)
+            getResume.classList.remove('selected');
+// Sections
+        about.classList.remove('view');
+        if (resume)
+            resume.classList.remove('view');
     }
-});
 
-if (getResume) {
-    getResume.addEventListener('click', function (e) {
+    getAbout.addEventListener('click', function (e) {
         if (window.innerWidth > 1040) {
             e.preventDefault();
             removeClass();
-            resume.classList.add('view');
-            getResume.classList.add('selected');
+            about.classList.add('view');
+            getAbout.classList.add('selected');
         }
     });
-}
 
-    </script>
+    if (getResume) {
+        getResume.addEventListener('click', function (e) {
+            if (window.innerWidth > 1040) {
+                e.preventDefault();
+                removeClass();
+                resume.classList.add('view');
+                getResume.classList.add('selected');
+            }
+        });
+    }
+
+</script>
 
 </html>

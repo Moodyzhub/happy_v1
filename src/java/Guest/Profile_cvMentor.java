@@ -20,10 +20,7 @@ import model.Mentor;
 import model.Rate;
 import model.info;
 
-/**
- *
- * @author admin
- */
+
 @WebServlet(name = "Profile_cvMenter", urlPatterns = {"/profilecv"})
 public class Profile_cvMentor extends HttpServlet {
 
@@ -90,11 +87,7 @@ public class Profile_cvMentor extends HttpServlet {
                 // Retrieve skills of the mentor
                 List<Have_SKill> hskill = mentorDao.getidhaveskill(idMentor);
                 request.setAttribute("cf", hskill);
-
-                // Retrieve additional info of the mentor
-                info info = mentorDao.getIdinfo(idMentor);
-                request.setAttribute("cs", info);
-
+                
                 // Retrieve account information of the mentor
                 Account account = mentorDao.getAccountByid(idMentor);
                 request.setAttribute("cx", account);
