@@ -1,8 +1,4 @@
-<%-- 
-    Document   : CreatBlog
-    Created on : Mar 6, 2024, 11:53:42 PM
-    Author     : ADMIN
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

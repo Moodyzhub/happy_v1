@@ -1,8 +1,4 @@
-<%-- 
-    Document   : home
-    Created on : Jan 15, 2024, 2:39:49 PM
-    Author     : Admin
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

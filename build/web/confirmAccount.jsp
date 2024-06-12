@@ -1,8 +1,4 @@
-<%-- 
-    Document   : confirmAccount
-    Created on : Jan 14, 2024, 3:23:35 PM
-    Author     : Admin
---%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

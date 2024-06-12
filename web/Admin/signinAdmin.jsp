@@ -1,8 +1,4 @@
-<%-- 
-    Document   : loginAdmin
-    Created on : Jan 16, 2024, 5:31:21 PM
-    Author     : Admin
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

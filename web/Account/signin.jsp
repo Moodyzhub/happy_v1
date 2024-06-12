@@ -1,8 +1,4 @@
-<%-- 
-    Document   : login
-    Created on : Jan 8, 2024, 9:26:26 PM
-    Author     : trang
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

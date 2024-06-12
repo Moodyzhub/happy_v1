@@ -161,11 +161,7 @@ public class filter implements Filter {
             if (a == null) {
                 res.sendRedirect("home");
             }
-        } else if (url.endsWith("changePass") || url.endsWith("reset-password")) {
-            if (a == null) {
-                res.sendRedirect("home");
-            }
-        }
+        } 
 
         Throwable problem = null;
         try {

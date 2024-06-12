@@ -1,8 +1,4 @@
-<%-- 
-    Document   : blog
-    Created on : Feb 27, 2024, 10:22:03 PM
-    Author     : ADMIN
---%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

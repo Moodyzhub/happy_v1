@@ -1,8 +1,4 @@
-<%-- 
-    Document   : Succesfull
-    Created on : Jan 21, 2024, 6:29:41 PM
-    Author     : admin
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

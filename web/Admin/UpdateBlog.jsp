@@ -1,8 +1,4 @@
-<%-- 
-    Document   : UpdateBlog
-    Created on : Mar 7, 2024, 12:04:31 PM
-    Author     : ADMIN
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

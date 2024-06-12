@@ -1,7 +1,7 @@
 <%-- 
     Document   : event
-    Created on : Feb 26, 2024, 10:18:12 AM
-    Author     : trang
+    Created on : May 16, 2024, 4:18:02 PM
+    Author     : phatvv
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

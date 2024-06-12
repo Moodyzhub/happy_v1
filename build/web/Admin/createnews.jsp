@@ -1,7 +1,7 @@
 <%-- 
-    Document   : createnews
-    Created on : Feb 26, 2024, 10:45:10 AM
-    Author     : trang
+    Document   : create news
+    Created on : Jun 6, 2024, 4:18:02 PM
+    Author     : phatvv
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

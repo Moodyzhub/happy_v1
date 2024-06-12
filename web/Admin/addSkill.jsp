@@ -1,8 +1,4 @@
-<%-- 
-    Document   : addSkill
-    Created on : Jan 21, 2024, 12:16:43 AM
-    Author     : Admin
---%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

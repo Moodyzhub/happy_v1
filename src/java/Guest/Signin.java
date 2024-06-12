@@ -19,7 +19,7 @@ import model.Account;
  *
  * @author trang
  */
-@WebServlet(name = "SigninServlet", urlPatterns = {"/signin"})
+//@WebServlet(name = "SigninServlet", urlPatterns = {"/signin"})
 public class Signin extends HttpServlet {
 
     /**
