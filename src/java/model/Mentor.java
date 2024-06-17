@@ -187,6 +187,13 @@ package model;
         this.myservice = myservice;
         this.age = age;
     }
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
     //for search mentor
     public Mentor(int idMentor, String fullname, float rate, int totalRequest, int invite, int idSkill, String skillName, String avatar) {
         this.idMentor = idMentor;
@@ -231,13 +238,7 @@ package model;
         this.fullname = fullname;
     }
 
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
+    
 
     public String getPhone() {
         return phone;

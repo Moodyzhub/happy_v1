@@ -84,7 +84,9 @@
                             <div class="row">
                                 
                                     <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="margin-bottom: 50px">
-                                        <h4 style="margin-bottom: 50px">The <em>Mentor</em> are teaching <em>${search}</em> skill</h4>
+      
+                                        <h1 style="margin-bottom: 50px; color: red;">${err}</h1>
+                                        <h1 style="margin-bottom: 50px; color: green;">${message}</h1>
                                     </div>
                                 
                                 <div class="col-lg-12 align-self-center">

@@ -5,6 +5,7 @@
 package Guest;
 
 import admin.AdminDAO;
+import dal.DAO;
 import dal.MentorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,6 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import model.Mentor;
+import model.Skill;
 
 /**
  *
@@ -62,11 +64,21 @@ public class searchMentor extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        DAO daoz = new DAO();
         MentorDAO dao = new MentorDAO();
         AdminDAO admin = new AdminDAO();
         List<Mentor> list = new ArrayList<>();
         List<Mentor> listM = new ArrayList<>();
+        List<Skill> listAllSkill = daoz.ListAllSkill();
         String search = request.getParameter("searchBySkill");
+        boolean skillExists = listAllSkill.stream().anyMatch(skill -> skill.getSkillName().equals(search));
+
+if (!skillExists) {
+    // Kỹ năng không tồn tại, đặt một thông báo lỗi
+    request.setAttribute("err", "The skill " + search + " does not exist.");
+    request.getRequestDispatcher("suggestMentor.jsp").forward(request, response);
+}
+
         list = dao.listMentorBySkill(search);
 
         float rate;
@@ -80,7 +92,7 @@ public class searchMentor extends HttpServlet {
             listM.add(new Mentor(m.getIdMentor(), m.getFullname(), rate, totalRequest, totalInvite, m.getIdSkill(), m.getSkillName(), img));
         }
         request.setAttribute("listM", listM);
-                request.setAttribute("search", search);
+        request.setAttribute("message", "The Mentor are teaching " + search + " skill.");
         request.getRequestDispatcher("suggestMentor.jsp").forward(request, response);
     }
 
