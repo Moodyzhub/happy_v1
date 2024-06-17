@@ -565,6 +565,22 @@ public class MentorDAO extends DBContext {
         }
         return null;
     }
+    //for search mentor
+    public String getAvatar(int idMentor) {
+        String avatar = null;  
+        try {
+            String query = "SELECT avatar FROM mentor WHERE idMentor = ?";
+            stm = connection.prepareStatement(query);
+            stm.setInt(1, idMentor);
+            rs = stm.executeQuery();
+            if (rs.next()) {
+                avatar = rs.getString("avatar");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } 
+        return avatar;
+    }
 
     public static void main(String[] args) {
         MentorDAO mentorDAO = new MentorDAO();

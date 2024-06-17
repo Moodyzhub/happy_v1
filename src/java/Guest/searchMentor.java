@@ -75,9 +75,9 @@ public class searchMentor extends HttpServlet {
             rate = (float) (Math.round(dao.getRate(m.getIdMentor()) * 10.0) / 10.0);
             totalRequest = dao.totalRequest(m.getIdMentor());
             totalInvite = dao.totalInvite(m.getIdMentor());
-            String img = admin.getSkillById(m.getIdSkill()).getImage();
-            System.out.println(img);
-            listM.add(new Mentor(m.getIdMentor(), m.getFullname(), rate, m.getUser(), totalRequest, totalInvite, m.getIdSkill(), m.getSkillName(), img));
+            // String img = admin.getSkillById(m.getIdSkill()).getImage();
+            String img = dao.getAvatar(m.getIdMentor());
+            listM.add(new Mentor(m.getIdMentor(), m.getFullname(), rate, totalRequest, totalInvite, m.getIdSkill(), m.getSkillName(), img));
         }
         request.setAttribute("listM", listM);
 //        response.sendRedirect("suggestMentor.jsp");
@@ -109,7 +109,7 @@ public class searchMentor extends HttpServlet {
             totalRequest = dao.totalRequest(m.getIdMentor());
             totalInvite = dao.totalInvite(m.getIdMentor());
             String img = admin.getSkillById(m.getIdSkill()).getImage();
-            System.out.println(img);
+           
             listM.add(new Mentor(m.getIdMentor(), m.getFullname(), rate, m.getUser(), totalRequest, totalInvite, m.getIdSkill(), m.getSkillName(), img));
         }
         request.setAttribute("listM", listM);

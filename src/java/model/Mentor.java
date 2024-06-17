@@ -187,6 +187,17 @@ package model;
         this.myservice = myservice;
         this.age = age;
     }
+    //for search mentor
+    public Mentor(int idMentor, String fullname, float rate, int totalRequest, int invite, int idSkill, String skillName, String avatar) {
+        this.idMentor = idMentor;
+        this.fullname = fullname;
+        this.rate = rate;
+        this.totalRequest = totalRequest;
+        this.invite = invite;
+        this.idSkill = idSkill;
+        this.skillName = skillName;
+        this.avatar = avatar;
+    }
 
     public String getRegisterDate() {
         return registerDate;
@@ -355,5 +366,7 @@ package model;
     public void setSkillName(String skillName) {
         this.skillName = skillName;
     }
+
+    
 
 }
