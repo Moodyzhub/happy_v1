@@ -80,6 +80,7 @@ public class searchMentor extends HttpServlet {
             listM.add(new Mentor(m.getIdMentor(), m.getFullname(), rate, totalRequest, totalInvite, m.getIdSkill(), m.getSkillName(), img));
         }
         request.setAttribute("listM", listM);
+                request.setAttribute("search", search);
 //        response.sendRedirect("suggestMentor.jsp");
         request.getRequestDispatcher("suggestMentor.jsp").forward(request, response);
     }
@@ -113,6 +114,7 @@ public class searchMentor extends HttpServlet {
             listM.add(new Mentor(m.getIdMentor(), m.getFullname(), rate, m.getUser(), totalRequest, totalInvite, m.getIdSkill(), m.getSkillName(), img));
         }
         request.setAttribute("listM", listM);
+
 //        response.sendRedirect("suggestMentor.jsp");
         request.getRequestDispatcher("suggestMentor.jsp").forward(request, response);
     }
