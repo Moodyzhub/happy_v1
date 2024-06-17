@@ -1,6 +1,7 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="custom" uri="/WEB-INF/url-encoder.tld" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -169,7 +170,7 @@
                                 <h4> ${item.title} ${item.skillName}</h4>
                                 <p> ${item.skill_description}</p>
                                 <div class="text-button">
-                                    <a href="searchMentor?searchBySkill=${item.getSkillName()}">Read More <i class="fa fa-arrow-right"></i></a>
+                                    <a href="searchMentor?searchBySkill=<custom:encodeUrl value="${item.getSkillName()}"/>">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
