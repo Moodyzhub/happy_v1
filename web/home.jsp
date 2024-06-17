@@ -150,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="searchMentor" method="post">
+                <form action="searchMentor" method="get">
                     <div class="input-group mb-3">
                         <input name="searchBySkill" type="text" class="form-control" placeholder="Search skill">
                         <button class="btn btn-success" type="submit">Go</button>

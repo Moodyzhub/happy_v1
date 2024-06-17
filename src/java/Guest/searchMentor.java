@@ -81,7 +81,6 @@ public class searchMentor extends HttpServlet {
         }
         request.setAttribute("listM", listM);
                 request.setAttribute("search", search);
-//        response.sendRedirect("suggestMentor.jsp");
         request.getRequestDispatcher("suggestMentor.jsp").forward(request, response);
     }
 
