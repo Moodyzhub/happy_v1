@@ -5,6 +5,7 @@
 package dal;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -673,7 +674,7 @@ public class DAO extends DBContext {
         }
         return null;
     }
-
+    //Fatvv:
     public List<Skill> ListAllSkill() {
         Connection conn = null;
         String query = "SELECT * FROM skill";
@@ -690,6 +691,26 @@ public class DAO extends DBContext {
 
         return listAllSkill;
 
+    }
+    //Fatvv: get description by name
+    public String getDesBySkill(String skillName) {
+        String description = null;
+        String sql = "SELECT skill_description FROM skill WHERE skillName = ?";
+
+        try (Connection conn = new DBContext().connection;
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, skillName);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                description = rs.getString("skill_description");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return description;
     }
 
     public String getUserNameById(int id) {

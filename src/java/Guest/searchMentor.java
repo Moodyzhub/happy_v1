@@ -80,6 +80,7 @@ if (!skillExists) {
 }
 
         list = dao.listMentorBySkill(search);
+        String des_skil = daoz.getDesBySkill(search);
 
         float rate;
         int totalRequest, totalInvite;
@@ -92,7 +93,8 @@ if (!skillExists) {
             listM.add(new Mentor(m.getIdMentor(), m.getFullname(), rate, totalRequest, totalInvite, m.getIdSkill(), m.getSkillName(), img));
         }
         request.setAttribute("listM", listM);
-        request.setAttribute("message", "The Mentor are teaching " + search + " skill.");
+        request.setAttribute("message", "" + search + " Programming ");
+        request.setAttribute("des", des_skil);
         request.getRequestDispatcher("suggestMentor.jsp").forward(request, response);
     }
 
