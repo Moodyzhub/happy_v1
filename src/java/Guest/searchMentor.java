@@ -70,7 +70,7 @@ public class searchMentor extends HttpServlet {
         List<Mentor> list = new ArrayList<>();
         List<Mentor> listM = new ArrayList<>();
         List<Skill> listAllSkill = daoz.ListAllSkill();
-        String search = request.getParameter("searchBySkill");
+        String search = request.getParameter("searchBySkill");       
         boolean skillExists = listAllSkill.stream().anyMatch(skill -> skill.getSkillName().equals(search));
 
 if (!skillExists) {

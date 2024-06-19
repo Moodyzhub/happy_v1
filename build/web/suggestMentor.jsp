@@ -39,37 +39,37 @@
         <link rel="stylesheet" href="assets/css/owl.css">
         <script src="https://kit.fontawesome.com/4c292f6960.js" crossorigin="anonymous"></script>
         <style>
-            .card-container {
-                margin-bottom: 20px;
-	background-color: white;
-	border-radius: 5px;
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
-	color: #B3B8CD;
-	padding-top: 30px;
-	position: relative;
-	width: 350px;
-	max-width: 100%;
-	text-align: center;
-}
-.card-container .round {
-    width: 80%;
-	border: 1px solid #03BFCB;
-	border-radius: 50%;
-	padding: 7px;
-    object-fit: cover;
-}
-.card-container .pro {
-	color: #231E39;
-	background-color: #FEBB0B;
-	border-radius: 3px;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 3px 7px;
-	position: absolute;
-	top: 30px;
-	left: 30px;
-}
-        </style>>
+    .card-container {
+        margin-bottom: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+        color: #B3B8CD;
+        padding-top: 30px;
+        position: relative;
+        width: 350px;
+        max-width: 100%;
+        text-align: center;
+    }
+    .card-container .round {
+        width: 80%;
+        border: 1px solid #03BFCB;
+        border-radius: 50%;
+        padding: 7px;
+        object-fit: cover;
+    }
+    .card-container .pro {
+        color: #231E39;
+        background-color: #FEBB0B;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 3px 7px;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+</style>
     </head>
 
     <body>
