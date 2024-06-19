@@ -168,7 +168,7 @@
                                     <img src="${item.image}" height="237" width="246" alt="alt"/>
                                 </div>                          
                                 <h4> ${item.title} ${item.skillName}</h4>
-                                <p> ${item.skill_description}</p>
+                                <p> Học ${item.skillName} cùng mentor</p>
                                 <div class="text-button">
                                     <a href="searchMentor?searchBySkill=<custom:encodeUrl value="${item.getSkillName()}"/>">Read More <i class="fa fa-arrow-right"></i></a>
                                 </div>
