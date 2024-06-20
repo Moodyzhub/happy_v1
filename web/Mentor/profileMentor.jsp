@@ -101,6 +101,7 @@
                 margin-top: 10px; /* Adjust as needed */
                 margin-bottom: 10px; /* Adjust as needed */
             }
+           
         </style>
 
 
@@ -120,6 +121,10 @@
                     <a href="#resume" id='getResume'>
                         <span class="fas fa-file"></span>
                         <span class="link">Rating</span>
+                    </a>
+                    <a href="#schedule" id="getSchedule">
+                        <span class="fa fa-calendar"></span>
+                        <span class="link">Schedule</span>
                     </a>                   
                     <c:if test="${update eq 'accept'}">
                         <a href="createcv?idMentor=${cx.getId()}">
@@ -259,6 +264,51 @@
 
 
                 </section>
+       
+                <section id="schedule" class="schedule">
+                    <h3 class="title">Schedule</h3>
+                        <div class="center">
+                            <label for="yearSelect">YEAR</label>
+                            <select name="year" id="yearSelect"></select>
+            
+                            <label for="startWeekSelect">START WEEK</label>
+                            <select name="startWeek" id="startWeekSelect"></select>
+            
+                            <label for="endWeekSelect">END WEEK</label>
+                            <select name="endWeek" id="endWeekSelect"></select>
+                        </div>
+                        <table id="myTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Slot</th>
+                                    <th>MON</th>
+                                    <th>TUE</th>
+                                    <th>WED</th>
+                                    <th>THU</th>
+                                    <th>FRI</th>
+                                    <th>SAT</th>
+                                    <th>SUN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="timeSlot" items="${timeSlot}">
+                                    <tr>
+                                        <td><label class="form-check-label" for="timeSlotId">${timeSlot.time}</label></td>
+                                        <td><input type="checkbox" name="schedule" value="mon-${timeSlot.time_slot_id}" data-day="mon" data-slot="${timeSlot.time}"></td>
+                                        <td><input type="checkbox" name="schedule" value="tue-${timeSlot.time_slot_id}" data-day="tue" data-slot="${timeSlot.time}"></td>
+                                        <td><input type="checkbox" name="schedule" value="wed-${timeSlot.time_slot_id}" data-day="wed" data-slot="${timeSlot.time}"></td>
+                                        <td><input type="checkbox" name="schedule" value="thu-${timeSlot.time_slot_id}" data-day="thu" data-slot="${timeSlot.time}"></td>
+                                        <td><input type="checkbox" name="schedule" value="fri-${timeSlot.time_slot_id}" data-day="fri" data-slot="${timeSlot.time}"></td>
+                                        <td><input type="checkbox" name="schedule" value="sat-${timeSlot.time_slot_id}" data-day="sat" data-slot="${timeSlot.time}"></td>
+                                        <td><input type="checkbox" name="schedule" value="sun-${timeSlot.time_slot_id}" data-day="sun" data-slot="${timeSlot.time}"></td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                        
+                    
+                </section>
+                
         </div>
     </article>
 </section>
@@ -270,20 +320,26 @@
     // Menu links
     let getAbout = document.getElementById("getAbout");
     let getResume = document.getElementById("getResume");
+    let getSchedule = document.getElementById("getSchedule");
 
 // Sections
     let about = document.getElementById("about");
     let resume = document.getElementById("resume");
+    let schedule = document.getElementById("schedule");
 
     function removeClass() {
 // Links
         getAbout.classList.remove('selected');
         if (getResume)
             getResume.classList.remove('selected');
+        if (getSchedule)
+            getSchedule.classList.remove('selected');
 // Sections
         about.classList.remove('view');
         if (resume)
             resume.classList.remove('view');
+        if (schedule)
+            schedule.classList.remove('view');
     }
 
     getAbout.addEventListener('click', function (e) {
@@ -302,6 +358,16 @@
                 removeClass();
                 resume.classList.add('view');
                 getResume.classList.add('selected');
+            }
+        });
+    }
+    if (getSchedule) {
+        getSchedule.addEventListener('click', function (e) {
+            if (window.innerWidth > 1040) {
+                e.preventDefault();
+                removeClass();
+                schedule.classList.add('view');
+                getSchedule.classList.add('selected');
             }
         });
     }

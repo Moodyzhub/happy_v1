@@ -179,7 +179,7 @@ main{
     margin-top: 88px;
 }
 
-main .profile, main .about, main .resume, main .works, main .blog, main .contact{
+main .profile, main .about, main .resume, main .works, main .blog, main .schedule{
     box-sizing: border-box;
     position: relative;
     background: #ffffff;
@@ -190,7 +190,7 @@ main .profile, main .about, main .resume, main .works, main .blog, main .contact
     margin: 0 auto;
 }
 
-main .about, main .resume, main .works, main .blog, main .contact{
+main .about, main .resume, main .works, main .blog, main .schedule{
     padding: 30px 20px 30px 20px;
     margin-top: 15px;
 }
@@ -525,7 +525,7 @@ main .profile{
 }
 
 
-main .contact{
+main .schedule{
     margin-bottom: 40px;
 }
 
@@ -593,7 +593,7 @@ main .contact{
         width: 1020px;
     }
 
-    main .about, main .resume, main .contact {
+    main .about, main .resume, main .schedule {
         width: 0;
         height: 0;
         opacity: 0;
@@ -635,7 +635,7 @@ main .contact{
         background: #666;
     }
 
-    main .contact {
+    main .schedule {
         margin-bottom: 0;
     }
 }
